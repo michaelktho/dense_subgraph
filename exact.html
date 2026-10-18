@@ -69,16 +69,39 @@ main{padding:24px 20px 48px}.grid{display:grid;grid-template-columns:minmax(0,1.
 </style>
 </head>
 <body>
-<header><div class="wrap"><div class="header-content"><h1>Exact Weighted Densest Subgraph Search</h1><p class="header-description">Find globally optimal dense vertex-induced subgraphs of undirected, non-negative weighted graphs. Choose unrestricted densest-subgraph optimisation or a fixed-size densest-<em>k</em>-subgraph search, and inspect the solution and its optimality status.</p><div class="developer-credit"><span class="developer-label">Developed by</span><span class="developer-name">Dr. Michael Ho</span></div></div></div>
-  <nav class="method-nav" aria-label="Optimisation methods">
-    <a href="index.html" class="nav-link">
-      Greedy Peeling
-    </a>
-  
-    <a href="exact.html" class="nav-link active">
-      Exact Optimisation
-    </a>
-  </nav>
+<header>
+  <div class="wrap">
+    <div class="header-content">
+
+      <h1>Exact Weighted Densest Subgraph Search</h1>
+
+      <p class="header-description">
+        Find globally optimal dense vertex-induced subgraphs of undirected,
+        non-negative weighted graphs. Choose unrestricted densest-subgraph
+        optimisation or a fixed-size densest-k-subgraph search, and inspect
+        the solution and its optimality status.
+      </p>
+
+      <div class="developer-credit">
+        <span class="developer-label">Developed by</span>
+        <span class="developer-name">Dr. Michael Ho</span>
+      </div>
+
+    </div>
+
+    <nav class="method-nav" aria-label="Optimisation methods">
+      <a href="index.html" class="nav-link">
+        Greedy Peeling
+      </a>
+
+      <a href="exact.html"
+         class="nav-link active"
+         aria-current="page">
+        Exact Optimisation
+      </a>
+    </nav>
+
+  </div>
 </header>
 <main class="wrap"><div class="grid"><section>
 <div class="card"><h2>1. Adjacency matrix</h2><p class="muted">Paste a square symmetric matrix. Values may be separated by spaces, tabs or commas. The diagonal must be zero. Alternatively, upload a CSV or TXT file. Uploaded matrices are processed directly without being inserted into the text editor.</p><textarea id="matrixInput" spellcheck="false" aria-label="Adjacency matrix" placeholder="0, 4, 0\n4, 0, 5\n0, 5, 0"></textarea><div class="controls"><button id="exampleBtn" class="secondary">Load example</button><label class="file-label" for="fileInput">Upload CSV/TXT</label><input id="fileInput" type="file" accept=".csv,.txt,text/plain,text/csv"><button id="clearBtn" class="danger">Clear</button></div><div id="fileStatus" class="file-status hidden"></div><div id="inputMessage" class="message" role="status" aria-live="polite"></div></div>
