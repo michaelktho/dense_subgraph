@@ -56,6 +56,65 @@ header .header-description {
   font-size: 0.92rem;
   font-weight: 650;
 }
+  /* Navigation between optimisation methods */
+
+.method-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 26px;
+  padding: 5px;
+  width: fit-content;
+
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 11px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 18px;
+  border-radius: 8px;
+
+  color: #dbe5ff;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+
+  transition: background 0.2s ease,
+              color 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.nav-link.active {
+  background: #ffffff;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  .method-nav {
+    width: 100%;
+  }
+
+  .nav-link {
+    flex: 1;
+    padding: 10px 12px;
+    text-align: center;
+  }
+}
 </style>
 </head>
 <body>
@@ -74,12 +133,18 @@ header .header-description {
         <span class="developer-label">Developed by</span>
         <span class="developer-name">Dr. Michael Ho</span>
       </div>
+      <nav class="method-nav" aria-label="Optimisation methods">
+        <a href="index.html" class="nav-link active">
+          Greedy Peeling
+        </a>
+      
+        <a href="exact.html" class="nav-link">
+          Exact Optimisation
+        </a>
+      </nav>
     </div>
   </div>
-  <nav class="method-nav">
-    <a href="index.html">Greedy Peeling</a>
-    <a href="exact.html">Exact Optimisation</a>
-  </nav>
+
 </header>
 
 <main class="wrap"><div class="grid">
