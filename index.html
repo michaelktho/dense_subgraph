@@ -119,17 +119,17 @@ header .header-description {
 </style>
 </head>
 <body>
+
 <header>
   <div class="wrap">
     <div class="header-content">
 
-      <h1>Exact Weighted Densest Subgraph Search</h1>
+      <h1>Weighted Densest Subgraph Search</h1>
 
       <p class="header-description">
-        Find globally optimal dense vertex-induced subgraphs of undirected,
-        non-negative weighted graphs. Choose unrestricted densest-subgraph
-        optimisation or a fixed-size densest-k-subgraph search, and inspect
-        the solution and its optimality status.
+        Explore an undirected, non-negative weighted graph using the greedy
+        peeling algorithm. Enter or upload an adjacency matrix and inspect
+        the densest state encountered during peeling.
       </p>
 
       <div class="developer-credit">
@@ -137,21 +137,22 @@ header .header-description {
         <span class="developer-name">Dr. Michael Ho</span>
       </div>
 
+      <nav class="method-nav" aria-label="Optimisation methods">
+        <a href="index.html"
+           class="nav-link active"
+           aria-current="page">
+          Greedy Peeling
+        </a>
+
+        <a href="exact.html" class="nav-link">
+          Exact Optimisation
+        </a>
+      </nav>
+
     </div>
-
-    <!-- Navigation inside the centred wrap container -->
-    <nav class="method-nav" aria-label="Optimisation methods">
-      <a href="index.html" class="nav-link">
-        Greedy Peeling
-      </a>
-
-      <a href="exact.html" class="nav-link active" aria-current="page">
-        Exact Optimisation
-      </a>
-    </nav>
-
   </div>
 </header>
+
 
 <main class="wrap"><div class="grid">
 <section>
