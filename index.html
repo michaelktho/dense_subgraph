@@ -56,74 +56,25 @@ header .header-description {
   font-size: 0.92rem;
   font-weight: 650;
 }
-  /* Navigation between optimisation methods */
 
-.method-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+/* Academic references and method navigation */
+.method-nav{display:inline-flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding:5px;max-width:100%;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:11px}
+.nav-link{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:8px;color:#dbe5ff;text-decoration:none;font-size:.88rem;font-weight:600}
+.nav-link:hover{background:rgba(255,255,255,.16);color:#fff}
+.nav-link.active{background:#fff;color:#1e3a8a;font-weight:700}
+.nav-link:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.references-card{margin-top:0}
+.references-list{margin:0;padding-left:23px}
+.references-list li{padding:5px 0;overflow-wrap:anywhere}
+.references-card a{color:var(--accent);text-underline-offset:2px}
+@media(max-width:520px){.method-nav{width:100%}.nav-link{flex:1;padding:10px 12px;text-align:center}}
 
-  margin-top: 26px;
-  padding: 5px;
-  width: fit-content;
-
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 11px;
-}
-
-.nav-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px 18px;
-  border-radius: 8px;
-
-  color: #dbe5ff;
-  text-decoration: none;
-  font-size: 0.88rem;
-  font-weight: 600;
-
-  transition: background 0.2s ease,
-              color 0.2s ease;
-}
-
-.nav-link:hover {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-
-.nav-link.active {
-  background: #ffffff;
-  color: #1e3a8a;
-  font-weight: 700;
-}
-
-.nav-link:focus-visible {
-  outline: 2px solid #ffffff;
-  outline-offset: 2px;
-}
-
-@media (max-width: 520px) {
-  .method-nav {
-    width: 100%;
-  }
-
-  .nav-link {
-    flex: 1;
-    padding: 10px 12px;
-    text-align: center;
-  }
-}
 </style>
 </head>
 <body>
-
 <header>
   <div class="wrap">
     <div class="header-content">
-
       <h1>Weighted Densest Subgraph Search</h1>
 
       <p class="header-description">
@@ -138,21 +89,12 @@ header .header-description {
       </div>
 
       <nav class="method-nav" aria-label="Optimisation methods">
-        <a href="index.html"
-           class="nav-link active"
-           aria-current="page">
-          Greedy Peeling
-        </a>
-
-        <a href="exact.html" class="nav-link">
-          Exact Optimisation
-        </a>
+        <a href="index.html" class="nav-link active" aria-current="page">Greedy Peeling</a>
+        <a href="exact.html" class="nav-link">Exact Optimisation</a>
       </nav>
-
     </div>
   </div>
 </header>
-
 
 <main class="wrap"><div class="grid">
 <section>
@@ -224,7 +166,7 @@ intermediate state with the highest weighted density.
 <p class="muted">
 Greedy peeling is an approximation procedure. The reported result is the
 highest-density state encountered during the peeling sequence, not a
-certificate of the global optimum.
+certificate of the global optimum (Charikar, 2000).
 </p>
 </div>
 
@@ -259,7 +201,17 @@ Edge width reflects edge weight.
 <div class="visual"><svg id="chartSvg" viewBox="0 0 600 310"></svg></div>
 </div>
 </aside>
-</div></main>
+</div>
+<section class="card references-card" aria-labelledby="references-heading">
+  <h2 id="references-heading">References</h2>
+  <p class="muted">The following publication describes the greedy densest-subgraph approximation method on which this implementation is based.</p>
+  <ol class="references-list">
+    <li>Charikar, M. (2000). Greedy approximation algorithms for finding dense components in a graph. <em>Approximation Algorithms for Combinatorial Optimization (APPROX 2000)</em>, Lecture Notes in Computer Science, 1913, 84–95. <a href="https://doi.org/10.1007/3-540-44436-X_10" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/3-540-44436-X_10</a></li>
+  </ol>
+  <p class="muted small">The webpage uses the same density objective with non-negative edge weights and adapts vertex degrees to weighted degrees.</p>
+</section>
+
+</main>
 
 <script>
 "use strict";
